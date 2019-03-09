@@ -1,12 +1,14 @@
 #!/bin/bash
-#sudo yum -y update
+sudo yum -y update
+
+#install postgresql
 sudo yum -y install https://download.postgresql.org/pub/repos/yum/11/redhat/rhel-7-x86_64/pgdg-redhat11-11-2.noarch.rpm
 sudo yum -y install postgresql11-server
 sudo /usr/pgsql-11/bin/postgresql-11-setup initdb
 sudo systemctl start postgresql-11
 sudo systemctl enable postgresql-11
-#create database
 
+#create database
 sudo -u postgres psql -c "CREATE USER moodle WITH ENCRYPTED PASSWORD 'password';"
 sudo -u postgres psql -c "CREATE DATABASE moodle WITH OWNER moodle;"
 sudo -u postgres psql -c "GRANT ALL PRIVILEGES ON DATABASE moodle to moodle;"

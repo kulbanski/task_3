@@ -7,7 +7,7 @@ DBUSER=${3}
 DBPASSWD=${4}
 DBHOSTIP=${5}
 
-#sudo yum -y update
+sudo yum -y update
 
 #install apache
 sudo yum -y install httpd
@@ -23,8 +23,8 @@ sudo yum -y install http://rpms.remirepo.net/enterprise/remi-release-7.rpm
 sudo yum-config-manager --disable remi-php54
 sudo yum-config-manager --enable remi-php73
 sudo yum -y install php php-mcrypt php-cli php-gd php-curl php-ldap php-zip php-fileinfo \
-    php-xml php-intl php-mbstring php-xmlrpc php-soap php-fpm \
-    php-devel php-pear php-bcmath php-json php-pdo php-pgsql
+                    php-xml php-intl php-mbstring php-xmlrpc php-soap php-fpm \
+                    php-devel php-pear php-bcmath php-json php-pdo php-pgsql
 
 #install moodle 36
 sudo yum -y install wget
