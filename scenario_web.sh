@@ -53,7 +53,7 @@ sudo chown -R apache:apache /var/moodledata
 sudo chown -R apache:apache /var/www/
 sudo systemctl restart httpd
 
-# Setup&Config Firewall
+#config Firewall
 sudo systemctl enable firewalld
 sudo systemctl start firewalld
 sudo firewall-cmd --zone=public --add-service=ssh
